@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function User(name, surname, yearOfBirth) {
+  this.name = name;
+  this.surname = surname;
+  this.yearOfBirth = yearOfBirth;
+
+  this.alert = function(user, car, book) {
+    document.writeln(`Этот ${user.name} читает книгу ${book.title} о ${car.brand} <br>`);
+  };
+}
+
+function Car(brand, yearOfRelease, capacity) {
+this.brand = brand;
+this.yearOfRelease = yearOfRelease;
+this.capacity = capacity;
+
+this.alert2 = function(car, brand, yearOfRelease) {
+document.writeln(`Марка ${car.brand}, выпущенная в ${yearOfRelease}, имеет объем ${car.capacity} <br>`);
+};
+}
+
+function Book(title, author, yearRelease) {
+this.title = title;
+this.author = author;
+this.yearRelease = yearRelease;
+
+this.alert3 = function(book){
+	document.writeln(`книгу ${this.title} написал ${this.author} в ${this.yearRelease} <br>`)
+}
+}
+
+const user = new User('John', 'Doe', 1980);
+const car = new Car('BMW', 2021, 500);
+const book = new Book('secret car' , 'Takushi', 2019);
+
+user.alert(user, car, book);
+car.alert2(car, 'BMW', 2021);
+book.alert3();
+    </script>
+</body>
+</html>
